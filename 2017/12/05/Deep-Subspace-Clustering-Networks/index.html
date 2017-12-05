@@ -45,13 +45,17 @@
     
     
     | 
-    <a href='/tags/論文要約-クラスタリング-教師なし学習/'>論文要約 クラスタリング 教師なし学習</a>
+    <a href='/tags/論文要約/'>論文要約</a>,
+    
+    <a href='/tags/クラスタリング/'>クラスタリング</a>,
+    
+    <a href='/tags/教師なし学習/'>教師なし学習</a>
     
     
 </span>
     <h1 class="post-title">Deep Subspace Clustering Networks</h1>
     <section class="post-content">
-      <h1 id="Deep-Subspace-Clustering-Networks"><a href="#Deep-Subspace-Clustering-Networks" class="headerlink" title="Deep Subspace Clustering Networks"></a>Deep Subspace Clustering Networks</h1><h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>教師なし学習における部分空間クラスタリングのニューラルネットワークに関わる提案。<br>部分空間クラスタリングにおいて効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替する案を提案している。<br>また、部分空間クラスタリングを効果的に学習させる事前学習やfine-tuning方法も提案。<br>検証により本手法が部分空間クラスタリングより性能が優れていることを示している。</p>
+      <h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>教師なし学習における部分空間クラスタリングのニューラルネットワークに関わる提案。<br>部分空間クラスタリングにおいて効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替する案を提案している。<br>また、部分空間クラスタリングを効果的に学習させる事前学習やfine-tuning方法も提案。<br>検証により本手法が部分空間クラスタリングより性能が優れていることを示している。</p>
 <h2 id="2-先行研究と比べてどこがすごいの？"><a href="#2-先行研究と比べてどこがすごいの？" class="headerlink" title="2. 先行研究と比べてどこがすごいの？"></a>2. 先行研究と比べてどこがすごいの？</h2><p>本提案を利用することで、backpropagationを通して全てのデータの関連性をシンプルで、効果的に導き出せる。<br>非線形であるため、複雑な構造にも適用可能。</p>
 <h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><p>効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替するというアプローチ。</p>
 <h2 id="4-どうやって有効だと検証した？"><a href="#4-どうやって有効だと検証した？" class="headerlink" title="4. どうやって有効だと検証した？"></a>4. どうやって有効だと検証した？</h2><p>部分空間クラスタリングにおいて人気のあるベンチマークデータセットであるThe Extended Yale B datasetを用いて検証。</p>
