@@ -1,10 +1,11 @@
 ---
 title: Deep Subspace Clustering Networks
 date: 2017-12-05 16:42:13
-tags: 論文要約 クラスタリング 教師なし学習
+tags: 
+- "論文要約"
+- "クラスタリング"
+- "教師なし学習"
 ---
-
-# Deep Subspace Clustering Networks
 
 ## 1. どんなもの？
 教師なし学習における部分空間クラスタリングのニューラルネットワークに関わる提案。
