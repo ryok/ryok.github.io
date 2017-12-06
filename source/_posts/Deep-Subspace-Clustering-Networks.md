@@ -7,7 +7,7 @@ tags:
 - "教師なし学習"
 ---
 
-
+　　
 ## 1. どんなもの？
 教師なし学習における部分空間クラスタリングのニューラルネットワークに関わる提案。
 部分空間クラスタリングにおいて効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替する案を提案している。
@@ -20,9 +20,20 @@ tags:
 
 ## 3. 技術や手法の"キモ"はどこにある？
 効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替するというアプローチ。
+{% asset_img DeepSubspaceClusteringNetworks.PNG DeepSubspaceClusteringNetworks %}
 
 ## 4. どうやって有効だと検証した？
-部分空間クラスタリングにおいて人気のあるベンチマークデータセットであるThe Extended Yale B datasetを用いて検証。
+the Extended Yale B and ORL face image datasetsとthe COIL20/100といったような標準的な4つのデータセットを用いてクラスタリングの性能を検証。
+以下の精度と比較評価した。
+- Low Rank Representation(LRR) [23]
+- Low Rank Subspace Clustering (LRSC) [43]
+- Sparse Subspace Clustering (SSC) [10],
+- Kernel Sparse Subspace Clustering (KSSC) [35]
+- SSC by Orthogonal Matching Pursuit (SSCOMP)[53]
+- Efficient Dense Subspace Clustering (EDSC) [15]
+- SSC with the pre-trained convolutional
+- auto-encoder features (AE+SSC)
+- EDSC with the pre-trained convolutional auto-encoder features(AE+EDSC). F
 
 ## 5. 議論はあるか？
 
