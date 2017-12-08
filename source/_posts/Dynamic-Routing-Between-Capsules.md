@@ -9,11 +9,14 @@ tags:
 
 　　
 ## 1. どんなもの？
+カプセル構造の提案。
 
 ## 2. 先行研究と比べてどこがすごいの？
+Convolutional Neural Networksは物体認識において支配的なアプローチになってきた。
+カプセルは指数関数的に非効率をさけ、
 
 ## 3. 技術や手法の"キモ"はどこにある？
-{% asset_img Dynamic-Routing-Between-Capsules.PNG Dynamic-Routing-Between-Capsules %}
+{% asset_img Dynamic-Routing-Between-Capsules-1.PNG Dynamic-Routing-Between-Capsules-1 %}
 
 ## 4. どうやって有効だと検証した？
 
