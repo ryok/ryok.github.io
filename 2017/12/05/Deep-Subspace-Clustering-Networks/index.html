@@ -58,7 +58,7 @@
       <p>　　</p>
 <h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>教師なし学習における部分空間クラスタリングのニューラルネットワークに関わる提案。<br>部分空間クラスタリングにおいて効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替する案を提案している。<br>また、部分空間クラスタリングを効果的に学習させる事前学習やfine-tuning方法も提案。<br>検証により本手法が部分空間クラスタリングより性能が優れていることを示している。</p>
 <h2 id="2-先行研究と比べてどこがすごいの？"><a href="#2-先行研究と比べてどこがすごいの？" class="headerlink" title="2. 先行研究と比べてどこがすごいの？"></a>2. 先行研究と比べてどこがすごいの？</h2><p>本提案を利用することで、backpropagationを通して全てのデータの関連性をシンプルで、効果的に導き出せる。<br>非線形であるため、複雑な構造にも適用可能。</p>
-<h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><p>効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替するというアプローチ。<br><img src="/2017/12/05/Deep-Subspace-Clustering-Networks/DeepSubspaceClusteringNetworks.PNG" alt="DeepSubspaceClusteringNetworks" title="DeepSubspaceClusteringNetworks"></p>
+<h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><p>効果的と言われてきたself-expressivenessプロパティの代わりにencorderとdecoderの間にself-expressiveness層として代替するというアプローチ。<br><img src="/2017/12/05/Deep-Subspace-Clustering-Networks/DeepSubspaceClusteringNetworks.PNG" title="DeepSubspaceClusteringNetworks"></p>
 <h2 id="4-どうやって有効だと検証した？"><a href="#4-どうやって有効だと検証した？" class="headerlink" title="4. どうやって有効だと検証した？"></a>4. どうやって有効だと検証した？</h2><p>the Extended Yale B and ORL face image datasetsとthe COIL20/100といったような標準的な4つのデータセットを用いてクラスタリングの性能を検証。<br>以下の精度と比較評価した。</p>
 <ul>
 <li>Low Rank Representation(LRR) [23]</li>
@@ -72,10 +72,10 @@
 <li>EDSC with the pre-trained convolutional auto-encoder features(AE+EDSC). F</li>
 </ul>
 <h2 id="5-議論はあるか？"><a href="#5-議論はあるか？" class="headerlink" title="5. 議論はあるか？"></a>5. 議論はあるか？</h2><h2 id="6-次に読むべき論文はあるか？"><a href="#6-次に読むべき論文はあるか？" class="headerlink" title="6. 次に読むべき論文はあるか？"></a>6. 次に読むべき論文はあるか？</h2><ul>
-<li>部分空間クラスタリング（Subspace Clustering）について<br><a href="http://ieeexplore.ieee.org/document/6836065/?reload=true" target="_blank" rel="external">P. Ji, M. Salzmann, and H. Li. Efficient dense subspace clustering. In WACV, pages 461–468. IEEE, 2014.</a></li>
+<li>部分空間クラスタリング（Subspace Clustering）について<br><a href="http://ieeexplore.ieee.org/document/6836065/?reload=true" target="_blank" rel="noopener">P. Ji, M. Salzmann, and H. Li. Efficient dense subspace clustering. In WACV, pages 461–468. IEEE, 2014.</a></li>
 </ul>
 <h3 id="論文情報・リンク"><a href="#論文情報・リンク" class="headerlink" title="論文情報・リンク"></a>論文情報・リンク</h3><ul>
-<li>Pan Ji, Tong Zhang, Hongdong Li, Mathieu Salzmann, Ian Reid (Poster)，”Deep Subspace Clustering Networks” NIPS Proceedingsβ，2017年 <a href="http://papers.nips.cc/paper/6608-deep-subspace-clustering-networks" target="_blank" rel="external">論文リンク</a></li>
+<li>Pan Ji, Tong Zhang, Hongdong Li, Mathieu Salzmann, Ian Reid (Poster)，”Deep Subspace Clustering Networks” NIPS Proceedingsβ，2017年 <a href="http://papers.nips.cc/paper/6608-deep-subspace-clustering-networks" target="_blank" rel="noopener">論文リンク</a></li>
 </ul>
 
     </section>

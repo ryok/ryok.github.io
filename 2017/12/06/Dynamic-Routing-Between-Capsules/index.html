@@ -56,14 +56,23 @@
     <h1 class="post-title">Dynamic-Routing-Between-Capsules</h1>
     <section class="post-content">
       <p>　　</p>
-<h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>カプセル構造の提案。</p>
-<h2 id="2-先行研究と比べてどこがすごいの？"><a href="#2-先行研究と比べてどこがすごいの？" class="headerlink" title="2. 先行研究と比べてどこがすごいの？"></a>2. 先行研究と比べてどこがすごいの？</h2><p>Convolutional Neural Networksは物体認識において支配的なアプローチになってきた。<br>カプセルは指数関数的に非効率をさけ、</p>
-<h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><img src="/2017/12/06/Dynamic-Routing-Between-Capsules/Dynamic-Routing-Between-Capsules-1.PNG" title="Dynamic-Routing-Between-Capsules-1">
-<h2 id="4-どうやって有効だと検証した？"><a href="#4-どうやって有効だと検証した？" class="headerlink" title="4. どうやって有効だと検証した？"></a>4. どうやって有効だと検証した？</h2><h2 id="5-議論はあるか？"><a href="#5-議論はあるか？" class="headerlink" title="5. 議論はあるか？"></a>5. 議論はあるか？</h2><ul>
-<li><h2 id="6-次に読むべき論文はあるか？"><a href="#6-次に読むべき論文はあるか？" class="headerlink" title="6. 次に読むべき論文はあるか？"></a>6. 次に読むべき論文はあるか？</h2></li>
-<li></li>
+<h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>CNN（畳み込みニューラルネットワーク）の欠点を克服し、より頑強（ロバスト）になったカプセルネットワーク構造の提案。</p>
+<h2 id="2-先行研究と比べてどこがすごいの？"><a href="#2-先行研究と比べてどこがすごいの？" class="headerlink" title="2. 先行研究と比べてどこがすごいの？"></a>2. 先行研究と比べてどこがすごいの？</h2><p>Convolutional Neural Networksには以下の欠点がある。</p>
+<ul>
+<li>プーリング層は位置普遍性を獲得できるが、その反面空間的な構造の情報を喪失している。</li>
+<li>回転や比率が変わった画像認識を行うためには膨大な訓練データを必要とする。<br>カプセルネットワークでは上記の欠点を克服している。<br>本研究では計算効率の良いカプセル構造を採用し、非線形変換である「squash」，およびプーリング操作に変わりアフィン変換にロバストな「routing」からなるCapsule Networkを提案している．</li>
 </ul>
-<h3 id="論文情報・リンク"><a href="#論文情報・リンク" class="headerlink" title="論文情報・リンク"></a>論文情報・リンク</h3><ul>
+<h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><p>カプセルネットワークでは、通常のニューラルネットワークに対し、以下の点が特徴。</p>
+<ul>
+<li>入力/出力がともにベクトルである（ベクトルを扱うことで、高レベルの特徴と次の特徴の位置情報を保持し、空間情報の保持を実現する。）</li>
+<li>アフィン変換のステップが加えられている</li>
+<li>活性化関数がsquah関数(後述)で置換されている</li>
+<li>バイアスがない</li>
+<li>dynamic routing”と呼ばれる手法を用いて学習。前の層のカプセルから次の層のどのカプセルへどれだけの重みを配分するかを決定。<img src="/2017/12/06/Dynamic-Routing-Between-Capsules/Dynamic-Routing-Between-Capsules-1.PNG" title="Dynamic-Routing-Between-Capsules-1">
+</li>
+</ul>
+<h2 id="4-どうやって有効だと検証した？"><a href="#4-どうやって有効だと検証した？" class="headerlink" title="4. どうやって有効だと検証した？"></a>4. どうやって有効だと検証した？</h2><p>複数の手書き文字を重ね合わせたMultiMNISTデータセットに対して、有効性を確認。</p>
+<h2 id="5-議論はあるか？"><a href="#5-議論はあるか？" class="headerlink" title="5. 議論はあるか？"></a>5. 議論はあるか？</h2><h2 id="6-次に読むべき論文はあるか？"><a href="#6-次に読むべき論文はあるか？" class="headerlink" title="6. 次に読むべき論文はあるか？"></a>6. 次に読むべき論文はあるか？</h2><h3 id="論文情報・リンク"><a href="#論文情報・リンク" class="headerlink" title="論文情報・リンク"></a>論文情報・リンク</h3><ul>
 <li>Sara Sabour, Nicholas Frosst, Geoffrey E Hinton，”Dynamic Routing Between Capsules” arXiv，2017年 <a href="https://arxiv.org/abs/1710.09829" target="_blank" rel="noopener">論文リンク</a></li>
 </ul>
 
@@ -91,6 +100,10 @@
     </footer>
   </article>
   <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2017/12/08/hello-world/">
+        ← Hello World
+    </a>
     
     <span class="page-number">•</span>
     
