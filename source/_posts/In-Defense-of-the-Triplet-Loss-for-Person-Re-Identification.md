@@ -8,18 +8,40 @@ tags:
 ---
 
 ## 1. どんなもの？
-本論文では人の認識において、あまり効果がないとされてきた、Triplet lossが有効であることを示した。
+surogate lossに比べ、triplet lossは以下の点から有用でないというのが通説であった。
+- データセットが大きくなればなるほど、取りうるtripletの数も３乗に増えていき、トレーニング時間が膨大になる
+- そのため、hard tripletのminingが必要となるが、hardest tripletだけだと外れ値だけで学習することになってしまう。
+- そこで一般的にはmoderate negativesやmoderate positivesをminingすることが多い。
+どのようなminingをするにしても大きな塊を直近のfでembeddingし、それらのデータポイントの距離を取る必要がある。
+上記に関して既存の方法には無駄があるため、本論文ではtriplet lossの既存の方法に変更を加え、提案している。
+- Batch Hard
+- Batch All
 
+- データセット
+MARS
+Market-1501
+CUHK03
+
+- Model
+TriNet ... batch hard triplet loss 
+LuNet ... scratch
+
+- Evaluation
+mean average precision score (mAP)
+cumulative matching curve (CMC) at rank-1, rank-5
+
+Identification models
+Verification models
 
 ## 2. 先行研究と比べてどこがすごいの？
-コミュニティにおいて、surogate lossに比べ、triplet lossは有用でないというのが通説であった。
-いくつかのtriplet loss手法を検証し、有用であることを示した。
+
 
 ## 3. 技術や手法の"キモ"はどこにある？
 
 
 ## 4. どうやって有効だと検証した？
-学習済みネットワークと組み合わせ、３つのReIDデータセットを用いた。スクラッチで作ったネットワークも高いスコアを出した。
+学習済みネットワークと組み合わせ、３つのReIDデータセットを用いた。
+顔認識において訓練済みネットワークを使うことが多かったが、スクラッチで作ったネットワークも高いスコアを出し、有効であることを示した。
 
 
 ## 5. 議論はあるか？
