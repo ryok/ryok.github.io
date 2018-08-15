@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection | ryok note</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="ryok note">
+
+  
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">ryok note</h1>
+            <h2 class="blog-description"></h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-08-13T06:11:17.000Z" itemprop="datePublished">
+          2018-08-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/論文要約/'>論文要約</a>,
+    
+    <a href='/tags/異常検知/'>異常検知</a>,
+    
+    <a href='/tags/時系列/'>時系列</a>
+    
+    
+</span>
+    <h1 class="post-title">LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection</h1>
+    <section class="post-content">
+      <h2 id="1-どんなもの？"><a href="#1-どんなもの？" class="headerlink" title="1. どんなもの？"></a>1. どんなもの？</h2><p>LSTMベースのEncoder, Decoderを利用した、複数センサーデータの異常検知に対応した異常検知手法の提案。<br>検証の結果以下の点で有用であることを示した。</p>
+<ul>
+<li>positive likelihood が1.0を大幅に上回り、高い異常検知スコアを示した。</li>
+<li>周期的なデータに対して、複数のWindow枠でも異常検知した。</li>
+<li>predictable、nonpredictableなデータセット両方において、異常検知可能であることを示した。</li>
+</ul>
+<h2 id="2-先行研究と比べてどこがすごいの？"><a href="#2-先行研究と比べてどこがすごいの？" class="headerlink" title="2. 先行研究と比べてどこがすごいの？"></a>2. 先行研究と比べてどこがすごいの？</h2><p>既存手法としては以下。</p>
+<ul>
+<li>LSTMをprediction modelとして異常検知する</li>
+<li>Autoencoderの復元誤差を利用した異常検知<br>本手法では言語モデルのようにLSTMのEncoder, Decoderを利用することで、時系列データに対して復元誤差を利用した異常検知を適用した。</li>
+</ul>
+<h2 id="3-技術や手法の”キモ”はどこにある？"><a href="#3-技術や手法の”キモ”はどこにある？" class="headerlink" title="3. 技術や手法の”キモ”はどこにある？"></a>3. 技術や手法の”キモ”はどこにある？</h2><p>Encoderでベクトル表現を取得し、Decoderで復元し、復元誤差を最適化する。<br>LSTMを利用することにより復元誤差を時系列データに対して適用できる。</p>
+<h2 id="4-どうやって有効だと検証した？"><a href="#4-どうやって有効だと検証した？" class="headerlink" title="4. どうやって有効だと検証した？"></a>4. どうやって有効だと検証した？</h2><p>５種類のデータセットで検証。データセットはpredictableなものとnon predictableなものを含む。<br>全てにおいて高い異常検知スコアを示した。</p>
+<h2 id="5-議論はあるか？"><a href="#5-議論はあるか？" class="headerlink" title="5. 議論はあるか？"></a>5. 議論はあるか？</h2><ul>
+<li>EncDec-ADはpredictableなデータだけでなく、unpredictableなデータに対しても良い性能を示した。<br>そのため、他の手法と比べてもロバストであるかもしれない。ただし、他のモデルと公平に比較した訳ではないので、ちゃんとした比較が必要。</li>
+<li>ROCではなく、positive likelihood(TRP/FPR)で評価していたが、どちらが良いのか？</li>
+</ul>
+<h2 id="6-次に読むべき論文はあるか？"><a href="#6-次に読むべき論文はあるか？" class="headerlink" title="6. 次に読むべき論文はあるか？"></a>6. 次に読むべき論文はあるか？</h2><h3 id="論文情報・リンク"><a href="#論文情報・リンク" class="headerlink" title="論文情報・リンク"></a>論文情報・リンク</h3><ul>
+<li>Pankaj Malhotra, Anusha, “LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection” 2016年 <a href="">論文リンク</a></li>
+</ul>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>ryok</h4>
+    <p>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://ryok.github.io/2018/08/13/LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://ryok.github.io/2018/08/13/LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://ryok.github.io/2018/08/13/LSTM-based-Encoder-Decoder-for-Multi-sensor-Anomaly-Detection/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2018/08/09/Sparse-structure-learning-for-corelation-anomaly-detection/">
+        Sparse-structure-learning-for-corelation-anomaly-detection →
+    </a>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">ryok note</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '62645880']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>
